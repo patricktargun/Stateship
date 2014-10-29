@@ -6,6 +6,7 @@ var app = express(),
 	port = 9901;
 
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'))
 
 app.post('/api/representatives', civic.getReps);
 app.post('/api/voterInfo', civic.getVoterInfo);
