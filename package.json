@@ -1,0 +1,22 @@
+{
+  "name": "StateShip",
+  "version": "0.0.0",
+  "description": "StateShip =========",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Targun/StateShip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Targun/StateShip/issues"
+  },
+  "homepage": "https://github.com/Targun/StateShip",
+  "dependencies": {
+    "express": "^4.10.1"
+  }
+}
