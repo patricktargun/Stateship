@@ -41,28 +41,11 @@ header {
 
 /*MAP*/
 
-#mapster_wrap_0 {
-  margin: 20px auto;
+.map-container {
+	text-align: center;
+	margin-top: 10px;
 }
 
-.tooltip {
-  right: 500px;
-  width: 550px;
-  margin: 0 auto;
-}
-.tooltip h3 {
-  text-align: center;
-}
-.tooltip ul {
-  margin-top: 26px;
-  padding: 34px 66px 20px 66px;
-  border: 1px solid #ece6f9;
-  border-radius: 8px;
-  background-color: #f1f1f1;
-}
-.tooltip ul li {
-  line-height: 1.5em;
-}
 
 /*STATE*/
 
@@ -86,6 +69,7 @@ footer p {
 	line-height: 40px;
 	font-size: 1.5rem;
 }
+
 
 
 
