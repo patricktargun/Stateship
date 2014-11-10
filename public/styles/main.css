@@ -64,6 +64,12 @@ header {
   line-height: 1.5em;
 }
 
+/*STATE*/
+
+.state {
+	width: 150px;
+}
+
 
 /*FOOTER*/
 
