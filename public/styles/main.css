@@ -111,8 +111,50 @@ header {
 }
 
 /*SOCIAL*/
-.twitter-icon{
-	color: #55acee;
+.social-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.twitter-icon {
+	color: #2EA2DA;
+	font-size: 2em;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+}
+
+.facebook-icon {
+	color: #2EA2DA;
+	font-size: 2em;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+}
+
+.email-icon {
+	color: #2EA2DA;
+	font-size: 2em;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+}
+
+.website-icon {
+	color: #2EA2DA;
+	font-size: 2em;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
 }
 
 /*FOOTER*/
