@@ -22,16 +22,17 @@
             <p class="main-title">Stateship</p>
         </a>
         <div class="header-right">
-            <input ng-model="mainCtrl.address" class="form-control header-input" placeholder="City and State">
-            <select ng-model="mainCtrl.state" ng-options="state.abbreviation for state in mainCtrl.stateList"></select>
-                <button ng-click="mainCtrl.submitAddress()">Submit</button>
+            <input ng-model="mainCtrl.address" class="form-control header-input" placeholder="Address">
+            <input ng-model="mainCtrl.address" class="form-control header-input city-input" placeholder="City">
+            <select ng-model="mainCtrl.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
+            <div class="submit-btn" ng-click="mainCtrl.submitAddress()">Find Reps</div>
         </div>
     </header>
 
     <ng-view></ng-view>
 
     <footer>
-        <p>Stateship - Political Guide</p>
+        <p>Stateship - Find Your Representatives</p>
     </footer>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>

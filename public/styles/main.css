@@ -5,6 +5,15 @@ body {
 	font-weight: 200;
 }
 
+select {
+	width: 80px;
+	height: 35px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	margin-right: 10px;
+	color: #2EA2DA;
+}
+
 /*HEADER*/
 header {
 	padding: 15px 40px;
@@ -24,10 +33,14 @@ header {
 .header-right {
 	float: right;
 }
-
 .header-input {
-	margin: 48px 20px 0 0;
-	width: 350px;
+	margin: 48px 10px 0 0;
+	width: 300px;
+	display: inline-block;
+}
+
+.city-input {
+	width: 200px;
 }
 
 .header-right p {
@@ -38,6 +51,23 @@ header {
 	color: #2EA2DA;
 }
 
+.submit-btn {
+	text-align: center;
+	line-height: 35px;
+	display: inline-block;
+	height: 35px;
+	width: 70px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: #2EA2DA;
+}
+
+.submit-btn:hover{
+	background-color: #2EA2DA;
+	color: #fff;
+	border: 1px solid #2EA2DA;
+}
 
 /*MAP*/
 
