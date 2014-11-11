@@ -3,7 +3,9 @@
 
 	angular
 	.module('stateship')
-	.controller('MainCtrl', MainCtrl);
+	.controller('MainCtrl', MainCtrl);  //this controller is the parent controller of
+										//whatever view is loaded through the current
+										//route
 
 	MainCtrl.$inject = ["$location"];
 
@@ -74,7 +76,7 @@
 		];
 
 		function submitAddress(){
-			$location.path("/state/"+vm.state.abbreviation+"/"+vm.address);
+			$location.path("/state/"+vm.address.state.abbreviation+"/"+vm.address.street+','+vm.address.city);
 		}			
 
 	}
