@@ -49,14 +49,28 @@
                     }
 
                 }
-
+                fixPicture(local);
+                fixPicture(national);
+                fixPicture(stateReps);
                 return response.data;
             });
         }
 
         function getRepArrays() {
-        	//returns an array of arrays that contain the neeeded info.
+        	//returns an array of arrays that contain the needed info.
             return [national, stateReps, local];
+        }
+        function fixPicture(arr){
+            var suffixes = ["Jr.", "Sr.", "II", "III", "IV", "V"];
+            for(var i = 0; i<arr.length; i++){
+                if(!arr[i].photoUrl){
+                    var array = arr[i].name.split(" ");
+                    if(suffixes.indexOf(array[array.length-1]) !== -1){
+                        array.pop();
+                    }
+                    arr[i].initials = array[0][0]+array[array.length-1][0];
+                }
+            }
         }
 
     }
