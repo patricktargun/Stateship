@@ -10,8 +10,12 @@
         vm.setCurrentState = setCurrentState;
         vm.showCurrentState = showCurrentState;
         vm.showState = '';
+        vm.showSpinner = false;
+        vm.hideState = false;
 
         function setCurrentState(state) {
+            vm.hideState = true;
+            vm.showSpinner = true;
             $location.path('/state/' + state);
             $scope.$apply();
         }
