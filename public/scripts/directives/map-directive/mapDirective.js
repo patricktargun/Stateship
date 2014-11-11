@@ -89,7 +89,7 @@
                             st[0].onmouseover = function() {
                                 st.animate({
                                     fill: "#2EA2DA"
-                                }, 400);
+                                }, 300);
                                 st.toFront();
                                 R.safari();
                             };
@@ -97,7 +97,7 @@
                             st[0].onmouseout = function() {
                                 st.animate({
                                     fill: "#d3d3d3"
-                                }, 400);
+                                }, 300);
                                 st.toFront();
                                 R.safari();
                             };
