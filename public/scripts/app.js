@@ -26,7 +26,7 @@
                     	return StateService.getRepsByState($route.current.params.state.toUpperCase());
                     }
                 }
-            });
+            }); 
     }
 
 })();
