@@ -14,11 +14,16 @@
 						<div class="col-md-1">
 							<img ng-src="{{rep.photoUrl}}" class='rep-photo'>
 						</div>
-						<div class="col-md-5">
+						<div class="col-md-4">
 							<p class="rep-name"><ng href="#">{{rep.name}}</a></p>
 							<p class="rep-data">{{rep.office.name}}</p>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-4">
+							<p class="rep-data"><a href="http://twitter.com/{{rep.channels[0].id}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a></p>
+							<p class="rep-data"><a href="http://facebook.com/{{rep.channels[1].id}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a></p>
+							<p class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a></p><p class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a></p>
 						</div>
 				</div>
 			</div>
