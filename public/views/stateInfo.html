@@ -1,56 +1,100 @@
-
 <div class="state-container">
-
-	<div class="row">
-		<div class="col-sm-3 state-pic-wrapper">
-			<p class="state-name">{{stateCtrl.stateName}}</p>
-			<img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
-		</div>
-		<div class="col-sm-9">
-			<div class="row">
-				<h3 class="tier">National</h3>
-				<hr class="tier-hr">
-				<div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
-						<div class="col-md-1">
-							<img ng-src="{{rep.photoUrl}}" class='rep-photo'>
-						</div>
-						<div class="col-md-7">
-							<p class="rep-name">{{rep.name}}</p>
-							<p class="rep-data">{{rep.office.name}}</p>
-						</div>
-						<div class="col-md-4">
-							<ul class="social-list">
-							<li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a></li>
-							<li class="rep-data"><a href="http://twitter.com/{{rep.channels[0].id}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a></li>
-							<li class="rep-data"><a href="http://facebook.com/{{rep.channels[1].id}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a></li>
-							<li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a></li>
-							</ul>
-						</div>
-				</div>
-			</div>
-			<div class="row">
-				<h3 class="tier">State</h3>
-				<hr class="tier-hr">
-				<div class="row rep-wrapper" ng-repeat="rep in stateCtrl.stateReps">
-						<div class="col-md-2">
-							<img ng-src="{{rep.photoUrl}}" class='rep-photo'>
-						</div>
-						<div class="col-md-5">
-							<p class="rep-name"><ng href="#">{{rep.name}}</a></p>
-							<p class="rep-data">{{rep.office.name}}</p>
-						</div>
-						<div class="col-md-5">
-						</div>
-				</div>
-			</div>
-			<div class="row">
-				<h3 class="tier">Local</h3>
-				<hr class="tier-hr">
-				<input ng-model="mainCtrl.address" class="form-control header-input" placeholder="City and State">
-            <select ng-model="mainCtrl.state" ng-options="state.abbreviation for state in mainCtrl.stateList"></select>
-                <button ng-click="mainCtrl.submitAddress()">Submit</button>
-			</div>
-		</div>
-	</div>
-
+    <div class="row">
+        <div class="col-sm-3 state-pic-wrapper">
+            <p class="state-name">{{stateCtrl.stateName}}</p>
+            <img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <h3 class="tier">National</h3>
+                <hr class="tier-hr">
+                <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
+                    <div class="col-md-1">
+                        <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div>{{rep.initials}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="rep-name">
+                            <ng href="#">{{rep.name}}</a>
+                        </p>
+                        <p class="rep-data">{{rep.office.name}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="social-list">
+                            <li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="http://twitter.com/{{rep.channels[0].id}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="http://facebook.com/{{rep.channels[1].id}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="tier">State</h3>
+                <hr class="tier-hr">
+                <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.stateReps">
+                    <div class="col-md-1">
+                        <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div>{{rep.initials}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="rep-name">
+                            <ng href="#">{{rep.name}}</a>
+                        </p>
+                        <p class="rep-data">{{rep.office.name}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="social-list">
+                            <li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="http://twitter.com/{{rep.channels[0].id}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="http://facebook.com/{{rep.channels[1].id}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="tier">Local</h3>
+                <hr class="tier-hr">
+                <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.localReps">
+                    <div class="col-md-1">
+                        <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div>{{rep.initials}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="rep-name">
+                            <ng href="#">{{rep.name}}</a>
+                        </p>
+                        <p class="rep-data">{{rep.office.name}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="social-list">
+                            <li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="http://twitter.com/{{rep.channels[0].id}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="http://facebook.com/{{rep.channels[1].id}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
+                            </li>
+                            <li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="local-lookup" ng-show="stateCtrl.localReps.length===0">
+                    <input ng-model="mainCtrl.address.street" class="form-control local-input" placeholder="Address">
+                    <input ng-model="mainCtrl.address.city" class="form-control local-input city-input" placeholder="City">
+                    <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
+                    <div class="submit-btn local-submit-btn" ng-click="mainCtrl.submitAddress()">Find Local Reps</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
