@@ -1,5 +1,5 @@
 (function() {
-	'use strict';
+    'use strict';
     angular
         .module('stateship', [
             'ngRoute',
@@ -14,6 +14,19 @@
                 controller: 'MapCtrl',
                 controllerAs: 'mapCtrl'
             })
+            .when('/state/:state/:address', {
+                templateUrl: 'views/stateInfo.html',
+                controller: 'StateCtrl',
+                controllerAs: 'stateCtrl',
+                resolve: {
+                    currentState: function($route) {
+                        return $route.current.params.state;
+                    },
+                    representatives: function($route, StateService) {
+                        return StateService.getRepsByState($route.current.params.address);
+                    }
+                }
+            })
             .when('/state/:state', {
                 templateUrl: 'views/stateInfo.html',
                 controller: 'StateCtrl',
@@ -22,8 +35,8 @@
                     currentState: function($route) {
                         return $route.current.params.state;
                     },
-                    representatives: function($route, StateService){
-                    	return StateService.getRepsByState($route.current.params.state.toUpperCase());
+                    representatives: function($route, StateService) {
+                        return StateService.getRepsByState($route.current.params.state);
                     }
                 }
             }); 
