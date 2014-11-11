@@ -45,7 +45,9 @@
 			<div class="row">
 				<h3 class="tier">Local</h3>
 				<hr class="tier-hr">
-				<input class="form-control" placeholder="add local address">
+				<input ng-model="mainCtrl.address" class="form-control header-input" placeholder="City and State">
+            <select ng-model="mainCtrl.state" ng-options="state.abbreviation for state in mainCtrl.stateList"></select>
+                <button ng-click="mainCtrl.submitAddress()">Submit</button>
 			</div>
 		</div>
 	</div>
