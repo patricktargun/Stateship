@@ -4,7 +4,6 @@
         <div class="col-sm-3 state-pic-wrapper">
             <p class="state-name">{{stateCtrl.stateName}}</p>
             <img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
-            <div>{{rep.initials}}</div>
         </div>
         <div class="col-sm-9">
             <div class="row">
@@ -13,6 +12,7 @@
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
                     <div class="col-md-1">
                         <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+                        <div>{{rep.initials}}</div>
                     </div>
                     <div class="col-md-7">
                         <p class="rep-name">
