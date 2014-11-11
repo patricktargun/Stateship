@@ -121,6 +121,9 @@ header {
 	margin-top: 0;
 }
 
+.name-link {
+	text-decoration: none;
+}
 /*Rep Thumb*/
 
 .rep-photo {
