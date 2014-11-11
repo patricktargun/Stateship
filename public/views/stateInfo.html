@@ -2,17 +2,40 @@
 <div class="state-container">
 
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="col-sm-3 state-pic-wrapper">
+			<p class="state-name">{{stateCtrl.stateName}}</p>
 			<img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
 		</div>
 		<div class="col-sm-9">
 			<div class="row">
 				<h3 class="tier">National</h3>
 				<hr class="tier-hr">
+				<div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
+						<div class="col-md-2">
+							<img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+						</div>
+						<div class="col-md-5">
+							<p class="rep-name">{{rep.name}}</p>
+							<p class="rep-data">{{rep.office.name}}</p>
+						</div>
+						<div class="col-md-5">
+						</div>
+				</div>
 			</div>
 			<div class="row">
 				<h3 class="tier">State</h3>
 				<hr class="tier-hr">
+				<div class="row rep-wrapper" ng-repeat="rep in stateCtrl.stateReps">
+						<div class="col-md-2">
+							<img ng-src="{{rep.photoUrl}}" class='rep-photo'>
+						</div>
+						<div class="col-md-5">
+							<p class="rep-name">{{rep.name}}</p>
+							<p class="rep-data">{{rep.office.name}}</p>
+						</div>
+						<div class="col-md-5">
+						</div>
+				</div>
 			</div>
 			<div class="row">
 				<h3 class="tier">Local</h3>

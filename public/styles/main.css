@@ -26,8 +26,8 @@ header {
 }
 
 .header-input {
-	margin: 18px 20px 0 0;
-	width: 300px;
+	margin: 48px 20px 0 0;
+	width: 350px;
 }
 
 .header-right p {
@@ -46,6 +46,14 @@ header {
 	margin-top: 10px;
 }
 
+.show-state {
+	color: #2EA2DA;
+	font-size: 4rem;
+	position: absolute;
+	bottom: 60px;
+	right: 40px;
+}
+
 
 /*STATE*/
 
@@ -54,7 +62,20 @@ header {
 }
 
 .state {
-	width: 400px;
+	max-width: 80%;
+	max-height: 200px;
+}
+
+
+.state-pic-wrapper {
+	text-align: center;
+}
+
+.state-name {
+	color: #2EA2DA;
+	font-weight: 200;
+	font-size: 3.5rem;
+	margin-top: 50px;
 }
 
 .tier {
@@ -68,6 +89,23 @@ header {
 	margin-top: 0;
 }
 
+/*Rep Thumb*/
+
+.rep-photo {
+	width: 100px;
+	border-radius: 4px;
+}
+
+.rep-wrapper {
+	color: #868686;
+	margin: 0 30px;
+	padding: 10px 0;
+	border-bottom: 1px solid #EFEFEF;
+}
+
+.rep-name {
+	font-size: 2rem;
+}
 
 /*FOOTER*/
 

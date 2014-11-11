@@ -8,8 +8,7 @@
                 restrict: 'EA',
                 scope: {
                     request: '&',
-                    showState: '&',
-                    hey: "&"
+                    showState: '&'
                 },
                 link: function(scope, element, attr) {
                     var usMap = {
@@ -89,9 +88,11 @@
                             st[0].style.cursor = "pointer";
 
                             st[0].onmouseover = function() {
+                                // scope.showState = state;
+                                scope.showState()(state);
                                 st.animate({
                                     fill: "#2EA2DA"
-                                }, 300);
+                                }, 200);
                                 st.toFront();
                                 R.safari();
                             };
@@ -99,7 +100,7 @@
                             st[0].onmouseout = function() {
                                 st.animate({
                                     fill: "#d3d3d3"
-                                }, 300);
+                                }, 200);
                                 st.toFront();
                                 R.safari();
                             };
