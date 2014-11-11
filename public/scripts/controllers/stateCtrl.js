@@ -9,7 +9,7 @@
     function StateCtrl(currentState, representatives, StateService) {
 
         var vm = this;
-        var repArrays = StateService.getRepArrays();
+        var repArrays = StateService.getRepArrays(); //an array of arrays: [national, state, local]
         vm.reps = representatives;
         vm.nationalReps = repArrays[0];
         vm.stateReps = repArrays[1];

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="stateship">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="/img/stateshipLogo.png"/>
-    <title>Stateship</title>  
+    <link rel="shortcut icon" type="image/png" href="/img/stateshipLogo.png" />
+    <title>Stateship</title>
     <link rel="shortcut icon" href="" />
     <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
-    <link href="styles/main.css" rel="stylesheet"> 
+    <link href="styles/main.css" rel="stylesheet">
 
-  </head>
-  <body>
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl">
     <header>
-        <a href="#"><img class="stateship-logo" src="img/stateshipLogo.png">
-        <p class="main-title">Stateship</p></a>
+        <a href="#">
+            <img class="stateship-logo" src="img/stateshipLogo.png">
+            <p class="main-title">Stateship</p>
+        </a>
         <div class="header-right">
-          <input class="form-control header-input" placeholder="City and State">
+            <input ng-model="mainCtrl.address" class="form-control header-input" placeholder="City and State">
+            <select ng-model="mainCtrl.state" ng-options="state.abbreviation for state in mainCtrl.stateList"></select>
+                <button ng-click="mainCtrl.submitAddress()">Submit</button>
         </div>
     </header>
 
@@ -32,11 +38,13 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.min.js"></script>
 
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/mainCtrl.js"></script>
     <script src="/scripts/controllers/stateCtrl.js"></script>
     <script src="/scripts/controllers/mapCtrl.js"></script>
     <script src="/scripts/services/stateService.js"></script>
     <!-- Directives -->
     <script src="/scripts/directives/map-directive/raphael-min.js"></script>
     <script src="/scripts/directives/map-directive/mapDirective.js"></script>
-  </body>
+</body>
+
 </html>

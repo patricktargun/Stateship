@@ -15,6 +15,11 @@
             return $http.post('/api/representatives', {
                 address: address || state
             }).then(function(response) {
+
+            	//separates out information
+            	//national: US President, Vice President, Senators, US Rep
+            	//state: Governor, Attorney General, State Legislators, etc
+            	//local: County and City government
                 var arr = response.data;
                 national = ['', ''];
                 stateReps = [];
@@ -50,6 +55,7 @@
         }
 
         function getRepArrays() {
+        	//returns an array of arrays that contain the neeeded info.
             return [national, stateReps, local];
         }
 
