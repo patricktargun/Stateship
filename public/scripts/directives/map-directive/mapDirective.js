@@ -103,6 +103,7 @@
                                 }, 200);
                                 st.toFront();
                                 R.safari();
+                                scope.showState()('');
                             };
 
                             st[0].onclick = function() {
