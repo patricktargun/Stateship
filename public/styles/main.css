@@ -49,8 +49,23 @@ header {
 
 /*STATE*/
 
+.state-container {
+	padding: 50px 100px;
+}
+
 .state {
 	width: 150px;
+}
+
+.tier {
+	color: #2EA2DA;
+	font-weight: 200;
+	font-size: 4rem;
+}
+
+.tier-hr {
+	border-top: 1px solid #2EA2DA;
+	margin-top: 0;
 }
 
 
