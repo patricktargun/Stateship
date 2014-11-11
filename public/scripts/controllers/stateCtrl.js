@@ -19,6 +19,8 @@
 
         console.log(vm.nationalReps, vm.stateReps, vm.localReps);
 
+
+
         
     }
 })();
