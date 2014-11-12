@@ -22,13 +22,12 @@
                     </div>
                     <div class="col-md-4">
                         <ul class="social-list">
-                            <li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a>
-                            </li>
+                            
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
                             </li>
                             <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
                             </li>
-                            <li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -50,13 +49,12 @@
                     </div>
                     <div class="col-md-4">
                         <ul class="social-list">
-                            <li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a>
-                            </li>
+                            
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
                             </li>
                             <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
                             </li>
-                            <li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -78,13 +76,12 @@
                     </div>
                     <div class="col-md-4">
                         <ul class="social-list">
-                            <li class="rep-data"><a href="#"><i class="ion-ios7-email-outline email-icon"></i></a>
-                            </li>
+                            
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
                             </li>
                             <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
                             </li>
-                            <li class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
                             </li>
                         </ul>
                     </div>
