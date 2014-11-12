@@ -209,6 +209,16 @@ header {
 	margin: 0;
 }
 
+.disabled {
+	color: #D3D3D3;
+	font-size: 2.5em;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+}
+
 /*FOOTER*/
 
 footer{
