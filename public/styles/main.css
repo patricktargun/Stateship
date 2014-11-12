@@ -24,6 +24,9 @@ select:focus {
 header {
 	padding: 15px 40px;
 }
+.stateship-head {
+	display: inline-block;
+}
 .main-title{
 	position:relative;
 	top: 20px;
@@ -117,6 +120,7 @@ header {
 	color: #2EA2DA;
 	font-weight: 200;
 	font-size: 4rem;
+	margin-left: 15px;
 }
 
 .tier-hr {
@@ -150,6 +154,17 @@ header {
 	border-radius: 4px;
 }
 
+.rep-initials {
+	background-color: #CCC;
+	color: #fff;
+	width: 60px;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 4px;
+	font-weight: 200;
+	font-size: 2.5rem;
+}
+
 .rep-wrapper {
 	color: #868686;
 	margin: 0 30px;
@@ -160,6 +175,7 @@ header {
 .rep-name {
 	font-size: 2rem;
 	margin-bottom: 0;
+	margin-top: 11px;
 }
 
 /*SOCIAL*/
@@ -233,6 +249,32 @@ footer{
 footer p {
 	line-height: 40px;
 	font-size: 1.5rem;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+@media (max-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (max-width: 1200px) {
+/*.stateship-head {display: block;}
+.header-right {float: left;}*/
+}
+/* Portrait tablets and small desktops */
+@media (max-width: 768px) {
+
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Phones and down */
+@media (max-width: 480px) {
+
 }
 
 
