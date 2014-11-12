@@ -1,5 +1,4 @@
 <div class="state-container">
-
     <div class="row">
         <div class="col-sm-3 state-pic-wrapper">
             <p class="state-name">{{stateCtrl.stateName}}</p>
@@ -22,12 +21,15 @@
                     </div>
                     <div class="col-md-4">
                         <ul class="social-list">
-                            
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
                             </li>
                             <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
                             </li>
+                            <li ng-if="!rep.facebook" class="rep-data"><i class="ion-social-facebook-outline facebook-icon disabled"></i>
+                            </li>
                             <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length === 0" class="rep-data"><i class="ion-ios7-world-outline website-icon disabled"></i>
                             </li>
                         </ul>
                     </div>
@@ -49,12 +51,16 @@
                     </div>
                     <div class="col-md-4">
                         <ul class="social-list">
-                            
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
                             </li>
                             <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
                             </li>
+                            <li ng-if="!rep.facebook" class="rep-data"><i class="ion-social-facebook-outline facebook-icon disabled"></i>
+                            </li>
                             <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            <li ng-if="rep.urls.length === 0" class="rep-data"></i>
                             </li>
                         </ul>
                     </div>
@@ -76,12 +82,17 @@
                     </div>
                     <div class="col-md-4">
                         <ul class="social-list">
-                            
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
+                            </li>
+                            <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
                             </li>
                             <li ng-if="rep.facebook" class="rep-data"><a href="http://facebook.com/{{rep.facebook}}" target="_blank"><i class="ion-social-facebook-outline facebook-icon"></i></a>
                             </li>
+                            <li ng-if="!rep.facebook" class="rep-data"><i class="ion-social-facebook-outline facebook-icon disabled"></i>
+                            </li>
                             <li ng-if="rep.urls.length > 0" class="rep-data"><a href="{{rep.urls[0]}}" target="_blank"><i class="ion-ios7-world-outline website-icon"></i></a>
+                            </li>
+                            <li ng-if="rep.urls.length === 0 || !rep.urls" class="rep-data"><i class="ion-ios7-world-outline website-icon disabled"></i>
                             </li>
                         </ul>
                     </div>
@@ -95,5 +106,4 @@
             </div>
         </div>
     </div>
-
 </div>

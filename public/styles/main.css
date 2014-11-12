@@ -124,6 +124,7 @@ header {
 	margin-top: 0;
 }
 
+
 .local-lookup {
 	text-align: center;
 }
@@ -200,6 +201,16 @@ header {
 
 .website-icon {
 	color: #2EA2DA;
+	font-size: 2.5em;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+}
+
+.disabled {
+	color: #D3D3D3;
 	font-size: 2.5em;
 	float: left;
 	display: inline;
