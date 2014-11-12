@@ -1,5 +1,5 @@
 <div class="map-container">
-	<map-area id="container" request="mapCtrl.setCurrentState" show-state="mapCtrl.showCurrentState"></map-area>
-	<p class="show-state" ng-hide="mapCtrl.hideState">{{mapCtrl.showState}}</p>
+	<map-area id="container" request="mapCtrl.setCurrentState" change-state-name="mapCtrl.changeStateName"></map-area>
+	<p class="show-state" ng-hide="mapCtrl.hideState">{{mapCtrl.stateName}}</p>
 	<p class="show-state" ng-show="mapCtrl.showSpinner"><i class='ion-loading-c'></i></p>
 </div>

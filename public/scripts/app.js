@@ -22,7 +22,7 @@
                     currentState: function($route) {
                         return $route.current.params.state;
                     },
-                    representatives: function($route, StateService) {
+                    repArrays: function($route, StateService) {
                         //resolves $http request before loading controller/view
                         return StateService.getRepsByState($route.current.params.address+", "+$route.current.params.state);
                     }
@@ -36,7 +36,7 @@
                     currentState: function($route) {
                         return $route.current.params.state;
                     },
-                    representatives: function($route, StateService) {
+                    repArrays: function($route, StateService) {
                         return StateService.getRepsByState($route.current.params.state);
                     }
                 }
