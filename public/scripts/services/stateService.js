@@ -47,12 +47,20 @@
                     } else {
                         stateReps.push(arr[i]);
                     }
+                    if(arr[i].channels){
+                        for(var j = 0; j < arr[i].channels.length; j++){
+                            if(arr[i].channels[j].type === "Facebook")
+                                arr[i].facebook = arr[i].channels[j].id;
+                            else if(arr[i].channels[j].type === "Twitter")
+                                arr[i].twitter = arr[i].channels[j].id;
+                        }
+                    }
 
                 }
                 fixPicture(local);
                 fixPicture(national);
                 fixPicture(stateReps);
-                return response.data;
+                return [national, stateReps, local];
             });
         }
 

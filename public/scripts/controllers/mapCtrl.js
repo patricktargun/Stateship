@@ -8,8 +8,8 @@
 
         var vm = this;
         vm.setCurrentState = setCurrentState;
-        vm.showCurrentState = showCurrentState;
-        vm.showState = '';
+        vm.changeStateName = changeStateName;
+        vm.stateName = '';
         vm.showSpinner = false;
         vm.hideState = false;
 
@@ -20,8 +20,8 @@
             $scope.$apply();
         }
 
-        function showCurrentState(state) {
-            vm.showState = stateNames[state];
+        function changeStateName(state) {
+            vm.stateName = stateNames[state];
             $scope.$apply();
         }
 
