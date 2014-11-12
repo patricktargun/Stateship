@@ -9,11 +9,11 @@
                 <h3 class="tier">National</h3>
                 <hr class="tier-hr">
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
-                        <div>{{rep.initials}}</div>
+                        <div class="rep-initials">{{rep.initials}}</div>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-6 rep-col-1">
                         <p class="rep-name">
                             <ng href="#">{{rep.name}}</a>
                         </p>
@@ -39,11 +39,11 @@
                 <h3 class="tier">State</h3>
                 <hr class="tier-hr">
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.stateReps">
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
-                        <div>{{rep.initials}}</div>
+                        <div class="rep-initials">{{rep.initials}}</div>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <p class="rep-name">
                             <ng href="#">{{rep.name}}</a>
                         </p>
