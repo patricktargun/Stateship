@@ -10,9 +10,11 @@ var app = express(),
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
+//End Point to hit for dirty politician info.
 app.post('/api/representatives', civic.getReps);
 app.post('/api/voterInfo', civic.getVoterInfo);
 
+//End Point to hit for sending Emails. Uses Mandrill
 app.post('/api/sendemail', MandrillCtrl.sendEmail);
 
 
