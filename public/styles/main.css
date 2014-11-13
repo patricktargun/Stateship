@@ -196,6 +196,10 @@ header {
 	width: 200px;
 }
 
+.pointer {
+	cursor: pointer;
+}
+
 /*Rep Thumb*/
 
 .rep-photo {
