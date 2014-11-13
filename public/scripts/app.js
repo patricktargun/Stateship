@@ -40,6 +40,18 @@
                         return StateService.getRepsByState($route.current.params.state);
                     }
                 }
+            })
+            .when('/rep/rep', {
+                templateUrl: 'views/email.html',
+                controller: 'RepCtrl',
+                controllerAs: 'repCtrl',
+                resolve: {
+                    currentRep: function($route) {
+                        return $route.current.params.rep;
+                    },
+
+                }
+
             }); 
     }
 
