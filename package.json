@@ -19,6 +19,8 @@
   "dependencies": {
     "body-parser": "^1.9.2",
     "express": "^4.10.1",
+    "mandrill-api": "^1.0.41",
+    "q": "^1.1.1",
     "request": "^2.47.0",
     "zlib": "^1.0.5"
   }
