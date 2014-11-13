@@ -41,13 +41,13 @@
                     }
                 }
             })
-            .when('/rep/rep', {
+            .when('/emailRep', {
                 templateUrl: 'views/email.html',
-                controller: 'RepCtrl',
-                controllerAs: 'repCtrl',
+                controller: 'EmailCtrl',
+                controllerAs: 'vm',
                 resolve: {
-                    currentRep: function($route) {
-                        return $route.current.params.rep;
+                    currentRep: function(EmailService) {
+                        return EmailService.getCurrentRep();
                     },
 
                 }
