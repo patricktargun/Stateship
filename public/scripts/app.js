@@ -23,7 +23,7 @@
                         return $route.current.params.state;
                     },
                     repArrays: function($route, StateService) {
-                        //resolves $http request before loading controller/view
+                        
                         return StateService.getRepsByState($route.current.params.address+", "+$route.current.params.state);
                     }
                 }

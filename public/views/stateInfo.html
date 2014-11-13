@@ -76,7 +76,7 @@
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.localReps">
                     <div class="col-md-1">
                         <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
-                        <div>{{rep.initials}}</div>
+                        <div class="rep-initials">{{rep.initials}}</div>
                     </div>
                     <div class="col-md-7">
                         <p class="rep-name">
@@ -104,10 +104,10 @@
                     </div>
                 </div>
                 <div class="local-lookup" ng-show="stateCtrl.localReps.length===0">
-                    <input ng-model="mainCtrl.address.street" class="form-control local-input" placeholder="Address">
-                    <input ng-model="mainCtrl.address.city" class="form-control local-input city-input" placeholder="City">
-                    <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
-                    <div class="submit-btn local-submit-btn" ng-click="mainCtrl.submitAddress()">Find Local Reps</div>
+                    <input ng-model="mainCtrl.address.street" class="form-control header-input" placeholder="Address"  tabindex="0">
+                    <input ng-model="mainCtrl.address.city" class="form-control header-input city-input" placeholder="City" tabindex="0">
+                    <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State" tabindex="0"></select>
+                    <button class="submit-btn" ng-click="mainCtrl.submitAddress()" ng-keypress="($event.which === 13)?mainCtrl.submitAddress():0" tabindex='0'>Find Local Reps</button>
                 </div>
             </div>
         </div>
