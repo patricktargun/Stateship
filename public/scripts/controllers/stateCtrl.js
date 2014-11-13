@@ -14,6 +14,11 @@
         vm.localReps = repArrays[2];
         vm.state = currentState;
         vm.stateName = stateNames[vm.state];
+        vm.setCurrentRep = setCurrentRep;
+
+        function setCurrentRep(rep) {
+            $location.path('/rep/' + rep)
+        }
 
         console.log(vm.nationalReps, vm.stateReps, vm.localReps);
 

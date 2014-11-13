@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-sm-4">
                         <ul class="social-list">
-                            <li ng-if="rep.emails.length > 0" class="rep-data"><a ng-href="mailto:{{rep.emails[0]}}"><i class="ion-ios7-email-outline email-icon"></i></a>
+                            <li ng-if="rep.emails.length > 0" class="rep-data"><a ng-click="stateCtrl.setCurrentRep(rep)"><i class="ion-ios7-email-outline email-icon"></i></a>
                             <li ng-if="!rep.emails" class="rep-data"><i class="ion-ios7-email-outline email-icon disabled"></i>
                             <li ng-if="rep.twitter" class="rep-data"><a href="http://twitter.com/{{rep.twitter}}" target="_blank"><i class="ion-social-twitter-outline twitter-icon"></i></a>
                             <li ng-if="!rep.twitter" class="rep-data"><i class="ion-social-twitter-outline twitter-icon disabled"></i>
@@ -107,7 +107,7 @@
                     <input ng-model="mainCtrl.address.street" class="form-control local-input" placeholder="Address">
                     <input ng-model="mainCtrl.address.city" class="form-control local-input city-input" placeholder="City">
                     <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
-                    <div class="submit-btn local-submit-btn" ng-click="mainCtrl.submitAddress()">Find Local Reps</div>
+                    <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()">Find Local Reps</div>
                 </div>
             </div>
         </div>
