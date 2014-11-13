@@ -9,17 +9,17 @@
                 <h3 class="tier">National</h3>
                 <hr class="tier-hr">
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.nationalReps">
-                    <div class="col-md-2">
+                    <div class="col-sm-2">
                         <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
                         <div class="rep-initials">{{rep.initials}}</div>
                     </div>
-                    <div class="col-md-6 rep-col-1">
+                    <div class="col-sm-6">
                         <p class="rep-name">
                             <ng href="#">{{rep.name}}</a>
                         </p>
                         <p class="rep-data">{{rep.office.name}}</p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <ul class="social-list">
                             <li ng-if="rep.emails.length > 0" class="rep-data"><a ng-href="mailto:{{rep.emails[0]}}"><i class="ion-ios7-email-outline email-icon"></i></a>
                             <li ng-if="!rep.emails" class="rep-data"><i class="ion-ios7-email-outline email-icon disabled"></i>
