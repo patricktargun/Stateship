@@ -7,9 +7,9 @@
 										//whatever view is loaded through the current
 										//route
 
-	MainCtrl.$inject = ["$location"];
+	MainCtrl.$inject = ["$location", "$scope"];
 
-	function MainCtrl($location) {
+	function MainCtrl($location, $scope) {
 		var vm = this;
 		vm.submitAddress = submitAddress; // function to change location path based on address
 		vm.address = {};
@@ -75,7 +75,13 @@
 		});
 
 		function submitAddress(){
-			$location.path("/state/"+vm.address.state.abbreviation+"/"+vm.address.street+','+vm.address.city);
+			$scope.$broadcast('show-errors-check-validity');
+			if (!$scope.searchReps.$valid) {
+				return; 
+			}
+			else if ($scope.searchReps.$valid) {
+				$location.path("/state/"+vm.address.state.abbreviation+"/"+vm.address.street+','+vm.address.city);
+			}
 		}			
 
 	}

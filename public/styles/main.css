@@ -56,6 +56,15 @@ select:focus {
 .local-submit-btn {
 	width: 120px;
 }
+
+.form-group .help-block {
+  display: none;
+}
+
+.form-group .has-error .help-block {
+  display: block;
+}
+
 /*HEADER*/
 header {
 	padding: 15px 40px;
@@ -93,8 +102,9 @@ header {
 	color: #2EA2DA;
 }
 
-
-
+.search-part {
+	display: inline-block;
+}
 
 
 /*MAP*/

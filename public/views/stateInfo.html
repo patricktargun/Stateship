@@ -74,11 +74,11 @@
                 <h3 class="tier">Local</h3>
                 <hr class="tier-hr">
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.localReps">
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <img ng-src="{{rep.photoUrl}}" class='rep-photo'>
                         <div class="rep-initials">{{rep.initials}}</div>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <p class="rep-name">
                             <ng href="#">{{rep.name}}</a>
                         </p>
@@ -108,7 +108,7 @@
                     <input ng-model="mainCtrl.address.street" class="form-control local-input" placeholder="Address">
                     <input ng-model="mainCtrl.address.city" class="form-control local-input city-input" placeholder="City">
                     <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
-                    <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()">Find Local Reps</div>
+                    <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()" pending>Find Local Reps</div>
                 </div>
             </div>
         </div>
