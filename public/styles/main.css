@@ -33,8 +33,17 @@ select:focus {
 	border-radius: 3px;
 }
 
+.btn-clear {
+	color: #2EA2DA;
+}
+
+.btn-clear:hover {
+	background-color: #ccc;
+	color: #fff;
+}
+
 .btn-cancel {
-	color: #555;
+	color: #2EA2DA;
 }
 
 .btn-cancel:hover {
