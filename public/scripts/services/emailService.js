@@ -6,6 +6,9 @@
 
     function emailService($http, $q){
         this.sendEmail = sendEmail;
+        this.setCurrentRep = setCurrentRep;
+        this.getCurrentRep = getCurrentRep;
+        var currentRep;
 
 
 
@@ -26,6 +29,12 @@
                 return err;
             })
         }
+    }
+    function setCurrentRep(rep){
+        currentRep = rep;
+    }
+    function getCurrentRep(){
+        return currentRep;
     }
 
 

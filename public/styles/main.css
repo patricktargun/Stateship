@@ -20,6 +20,42 @@ select:focus {
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
+
+/*COMPONENTS*/
+.our-btn {
+	text-align: center;
+	line-height: 35px;
+	display: inline-block;
+	height: 35px;
+	width: 70px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.btn-cancel {
+	color: #555;
+}
+
+.btn-cancel:hover {
+	background-color: #e74c3c;
+	color: #fff;
+	border: 1px solid #e74c3c;
+}
+
+.btn-blue {
+	color: #2EA2DA;
+}
+
+.btn-blue:hover{
+	background-color: #2EA2DA;
+	color: #fff;
+	border: 1px solid #2EA2DA;
+}
+
+.local-submit-btn {
+	width: 120px;
+}
 /*HEADER*/
 header {
 	padding: 15px 40px;
@@ -57,23 +93,9 @@ header {
 	color: #2EA2DA;
 }
 
-.submit-btn {
-	text-align: center;
-	line-height: 35px;
-	display: inline-block;
-	height: 35px;
-	width: 70px;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	color: #2EA2DA;
-}
 
-.submit-btn:hover{
-	background-color: #2EA2DA;
-	color: #fff;
-	border: 1px solid #2EA2DA;
-}
+
+
 
 /*MAP*/
 
@@ -162,9 +184,7 @@ header {
 	text-align: center;
 }
 
-.local-submit-btn {
-	width: 120px;
-}
+
 
 .local-input {
 	margin: 10px 10px 50px 0;
@@ -174,6 +194,10 @@ header {
 
 .city-input {
 	width: 200px;
+}
+
+.pointer {
+	cursor: pointer;
 }
 
 /*Rep Thumb*/
@@ -264,6 +288,32 @@ header {
 	padding: 10px;
 	margin: 0;
 }
+
+/*EMAIL FORMS*/
+.email-container {
+	padding: 0 50px;
+	margin-top: 50px;
+	margin-bottom: 80px;
+	text-align: center;
+}
+
+.msg-intro {
+	font-size: 2.5rem;
+	color: #868686;
+}
+
+.email-rep-name {
+	color: #2EA2DA;
+	font-size: 3.5rem;
+}
+
+.email-form {
+	max-width: 750px;
+	width: 90%;
+	margin: 0px auto;
+}
+
+
 
 /*FOOTER*/
 
