@@ -22,12 +22,20 @@
             <p class="main-title">Stateship</p>
         </a>
         <div class="header-righto">
+        <form name="searchReps" novalidate>
+            <div class="form-group" show-errors>
+                <div class="search-part">
+                    <input type="text" ng-model="mainCtrl.address.street" name="address" class="form-control header-input" placeholder="Street Address" required>
+                    <!-- <p class="help-block" ng-if="searchReps.address.$error.required">Check Your Address!</p> -->
+                </div>
 
-            <input ng-model="mainCtrl.address.street" class="form-control header-input" placeholder="Address">
-            <input ng-model="mainCtrl.address.city" class="form-control header-input city-input" placeholder="City">
-            <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
-            <div class="our-btn btn-blue" ng-click="mainCtrl.submitAddress()">Find Reps</div>
+                <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control header-input city-input" placeholder="City" required>
 
+                <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" name="state" placeholder="State" required></select>
+
+                <div class="our-btn btn-blue" type="submit" ng-click="mainCtrl.submitAddress()" pending>Find Reps</div> 
+            </div>
+        </form>
         </div>
     </header>
 
@@ -50,6 +58,8 @@
     <!-- Directives -->
     <script src="/scripts/directives/map-directive/raphael-min.js"></script>
     <script src="/scripts/directives/map-directive/mapDirective.js"></script>
+    <script src="/scripts/directives/showErrors.js"></script>
+    <script src="/scripts/directives/pending.js"></script>
 </body>
 
 </html>
