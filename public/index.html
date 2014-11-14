@@ -22,10 +22,12 @@
             <p class="main-title">Stateship</p>
         </a>
         <div class="header-righto">
+
             <input ng-model="mainCtrl.address.street" class="form-control header-input" placeholder="Address">
             <input ng-model="mainCtrl.address.city" class="form-control header-input city-input" placeholder="City">
             <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
             <div class="our-btn btn-blue" ng-click="mainCtrl.submitAddress()">Find Reps</div>
+
         </div>
     </header>
 
