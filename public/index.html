@@ -22,17 +22,12 @@
             <p class="main-title">Stateship</p>
         </a>
         <div class="header-righto">
-<<<<<<< HEAD
-            <input ng-model="mainCtrl.address.street" class="form-control header-input" placeholder="Address"  tabindex="0">
-            <input ng-model="mainCtrl.address.city" class="form-control header-input city-input" placeholder="City" tabindex="0">
-            <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State" tabindex="0"></select>
-            <button class="submit-btn" ng-click="mainCtrl.submitAddress()" ng-keypress="($event.which === 13)?mainCtrl.submitAddress():0" tabindex='0'>Find Reps</button>
-=======
+
             <input ng-model="mainCtrl.address.street" class="form-control header-input" placeholder="Address">
             <input ng-model="mainCtrl.address.city" class="form-control header-input city-input" placeholder="City">
             <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
             <div class="our-btn btn-blue" ng-click="mainCtrl.submitAddress()">Find Reps</div>
->>>>>>> 32442c683a3e906fb5930c0308507e60ac4b71eb
+
         </div>
     </header>
 

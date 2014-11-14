@@ -104,17 +104,11 @@
                     </div>
                 </div>
                 <div class="local-lookup" ng-show="stateCtrl.localReps.length===0">
-<<<<<<< HEAD
-                    <input ng-model="mainCtrl.address.street" class="form-control header-input" placeholder="Address"  tabindex="0">
-                    <input ng-model="mainCtrl.address.city" class="form-control header-input city-input" placeholder="City" tabindex="0">
-                    <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State" tabindex="0"></select>
-                    <button class="submit-btn" ng-click="mainCtrl.submitAddress()" ng-keypress="($event.which === 13)?mainCtrl.submitAddress():0" tabindex='0'>Find Local Reps</button>
-=======
+
                     <input ng-model="mainCtrl.address.street" class="form-control local-input" placeholder="Address">
                     <input ng-model="mainCtrl.address.city" class="form-control local-input city-input" placeholder="City">
                     <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State"></select>
                     <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()">Find Local Reps</div>
->>>>>>> 32442c683a3e906fb5930c0308507e60ac4b71eb
                 </div>
             </div>
         </div>
