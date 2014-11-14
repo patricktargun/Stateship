@@ -9,7 +9,7 @@
         var vm = this;
         vm.setCurrentState = setCurrentState;
         vm.changeStateName = changeStateName;
-        vm.stateName = '';
+        vm.stateName = 'Select a State';
         vm.showSpinner = false;
         vm.hideState = false;
 
@@ -21,7 +21,7 @@
         }
 
         function changeStateName(state) {
-            vm.stateName = stateNames[state];
+            vm.stateName = stateNames[state] || 'Select a State';
             $scope.$apply();
         }
 

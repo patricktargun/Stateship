@@ -102,7 +102,7 @@
                                 }, 200);
                                 st.toFront();
                                 R.safari();
-                                scope.changeStateName()('');
+                                scope.changeStateName()('Select A State');
                             };
 
                             st[0].onclick = function() {
