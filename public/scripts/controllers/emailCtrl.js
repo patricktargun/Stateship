@@ -3,11 +3,11 @@
         .module('stateship')
         .controller('EmailCtrl', EmailCtrl);
 
-    function EmailCtrl(currentRep, EmailService, nzSwal) {
+    function EmailCtrl(currentRep, EmailService, nzSwal, $route, $location) {
         var vm = this;
-        console.log("got Here");
         vm.sendEmail = sendEmail;
         vm.resetForm = resetForm;
+        vm.clearForm = clearForm;
         vm.rep = currentRep;
 
 
@@ -20,22 +20,44 @@
                 });
         }
 
+        function clearForm(email){
+            nzSwal({
+                title: "Are you sure?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#DD4B39',
+                confirmButtonText: "Yeah, clear it.",
+                closeOnConfirm: false
+            })
+                .then(function() {
+                    nzSwal({ title: "Cleared", timer: 1, confirmButtonColor: "#FFFFFF",   confirmButtonText: "" });
+                    for (var key in email){
+                        email[key] = "";
+                    }
+                })
+        }
+
         function resetForm(email) {
             nzSwal({
                     title: "Are you sure?",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: '#DD4B39',
-                    confirmButtonText: "Yes, do it!",
+                    confirmButtonText: "Yes, let's cancel.",
                     closeOnConfirm: false
                 })
                 .then(function() {
-                    nzSwal('You did it!');
-                    for (var key in email)
+                    nzSwal({   title: "Email Canceled", timer: 1000, confirmButtonColor: "#FFFFFF",   confirmButtonText: "" });
+                    for (var key in email){
                         email[key] = "";
-                })
-                .catch(function() {
-                    nzSwal('Cancelled :)');
+                    }
+                    var pathway = EmailService.getLastPath();
+                    if(pathway[1]){
+                        $location.path("/state/"+pathway[0]+"/"+pathway[1])
+                    }
+                    else {
+                        $location.path("/state/"+pathway[0])
+                    }
                 });
             
         }

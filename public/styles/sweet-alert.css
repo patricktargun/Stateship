@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
 .sweet-overlay {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
@@ -11,7 +11,8 @@
 
 .sweet-alert {
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 100;
   width: 478px;
   padding: 17px;
   border-radius: 5px;
@@ -35,7 +36,7 @@
     color: #575757;
     font-size: 30px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 200;
     text-transform: none;
     position: relative;
     margin: 25px 0;
@@ -46,7 +47,7 @@
     color: #797979;
     font-size: 16px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 200;
     position: relative;
     margin: 0;
     padding: 0;
@@ -57,7 +58,7 @@
     border: none;
     box-shadow: none;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 200;
     border-radius: 5px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
