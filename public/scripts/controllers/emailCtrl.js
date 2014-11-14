@@ -15,13 +15,13 @@
             email.to = currentRep.emails[0];
             EmailService.sendEmail(email)
                 .then(function() {
-                    for (key in email)
+                    for (var key in email)
                         email[key] = "";
                 });
         }
 
         function resetForm() {
-            for (key in email)
+            for (var key in email)
                 email[key] = "";
         }
     }
