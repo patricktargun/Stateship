@@ -13,12 +13,12 @@
 
         function sendEmail(email) {
             $scope.$broadcast('show-errors-check-validity');
-            if (!$scope.searchReps.$valid) {
+            if (!$scope.emailReps.$valid) {
+                console.log("everytime?");
                 return; 
             }
-            else if ($scope.searchReps.$valid) {
-                email.to = currentRep.emails[0];
-                EmailService.sendEmail(email)
+            else if ($scope.emailReps.$valid) {
+                console.log("buttcakes");
                 if (vm.isHuman) {
                     console.log('got here');
                     email.to = currentRep.emails[0];
