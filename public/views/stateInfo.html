@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row space-bottom">
                 <h3 class="tier">Local</h3>
                 <hr class="tier-hr">
                 <div class="row rep-wrapper" ng-repeat="rep in stateCtrl.localReps">
@@ -106,17 +106,21 @@
 
 
                 <div class="local-lookup" ng-show="stateCtrl.localReps.length===0">
+
                     <form name="searchReps" novalidate>
                         <div class="form-group search-part" show-errors>
                             <input type="text" ng-model="mainCtrl.address.street" name="address" class="form-control local-input" placeholder="Address" required>
+                            <span class="help-block help-position" ng-if="searchReps.address.$error.required">Enter an Address</span>
                         </div>
                         <div class="form-group search-part" show-errors>
                             <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control local-input city-input" placeholder="City" required>
+                            <span class="help-block help-position" ng-if="searchReps.city.$error.required">Enter a City</span>
                         </div>
                         <div class="form-group search-part" show-errors>
                             <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" placeholder="State" name="state" required></select>
+                            <span class="help-block help-position" ng-if="searchReps.state.$error.required">Select State</span>
+                            <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()" pending>Find Local Reps</div>
                         </div>
-                        <div class="our-btn btn-blue local-submit-btn" ng-click="mainCtrl.submitAddress()" pending>Find Local Reps</div>
                     </form>
                 </div>
             </div>

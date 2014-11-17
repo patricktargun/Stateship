@@ -54,6 +54,8 @@ select:focus {
 
 .btn-blue {
 	color: #2EA2DA;
+/*	float: right;
+	margin-top: 48px;*/
 }
 
 .btn-blue:hover{
@@ -66,14 +68,21 @@ select:focus {
 	width: 120px;
 }
 
+.search-form {
+	display: inline-block;
+}
+
 .form-group .help-block {
   display: none;
 }
 
-.form-group .has-error .help-block {
+.form-group.has-error .help-block {
   display: block;
 }
 
+.help-position {
+	position: absolute;
+}
 /*HEADER*/
 header {
 	padding: 15px 40px;
@@ -206,7 +215,7 @@ header {
 
 
 .local-input {
-	margin: 10px 10px 50px 0;
+	margin: 10px 10px 5px 0;
 	width: 300px;
 	display: inline-block;
 }
@@ -217,6 +226,10 @@ header {
 
 .pointer {
 	cursor: pointer;
+}
+
+.space-bottom {
+	margin-bottom: 50px;
 }
 
 /*Rep Thumb*/
