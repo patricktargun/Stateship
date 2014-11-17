@@ -21,18 +21,22 @@
             <img class="stateship-logo" src="img/stateshipLogo.png">
             <p class="main-title">Stateship</p>
         </a>
+
         <div class="header-righto">
         <form name="searchReps" novalidate>
             <div class="form-group search-part" show-errors>
                     <input type="text" ng-model="mainCtrl.address.street" name="address" class="form-control header-input" placeholder="Street Address" required>
-                    <!-- <p class="help-block" ng-if="searchReps.address.$error.required">Check Your Address!</p> -->
+                    <span class="help-block help-position" ng-if="searchReps.address.$error.required">Enter an Address</span>
             </div>
             <div class="form-group search-part" show-errors>
                 <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control header-input city-input" placeholder="City" required>
-
-                <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" name="state" placeholder="State" required></select>
+                <span class="help-block help-position" ng-if="searchReps.city.$error.required">Enter a City</span>
             </div>
-                <div class="our-btn btn-blue" type="submit" ng-click="mainCtrl.submitAddress()" pending>Find Reps</div> 
+            <div class="form-group search-part" show-errors>
+                <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" name="state" placeholder="State" required></select>
+                <span class="help-block help-position" ng-if="searchReps.state.$error.required">Select State</span>
+            </div>
+            <div class="our-btn btn-blue" type="submit" ng-click="mainCtrl.submitAddress()" pending>Find Reps</div>
         </form>
         </div>
     </header>
