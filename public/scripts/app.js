@@ -3,7 +3,8 @@
     angular
         .module('stateship', [
             'ngRoute',
-            'mapDirective'
+            'mapDirective',
+            'nzSweetAlert'
         ])
         .config(configThat);
 
