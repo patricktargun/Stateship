@@ -9,14 +9,7 @@
         vm.resetForm = resetForm;
         vm.clearForm = clearForm;
         vm.rep = currentRep;
-
-        insertCheckboxes();
-
-        function insertCheckboxes() {
-            var btns = angular.element(document.getElementById("submission-btns"));
-            btns.before('<div class="form-group"> <input type="checkbox" ng-model="vm.isHuman">Check here if you are human. <br></div>');
-        }
-
+        vm.test = test;
 
         function sendEmail(email) {
             if (vm.isHuman) {
@@ -26,8 +19,29 @@
                     .then(function() {
                         for (var key in email)
                             email[key] = "";
+                        nzSwal({
+                            title: "Email Sent",
+                            timer: 1000,
+                            confirmButtonColor: "#FFFFFF",
+                            confirmButtonText: ""
+                        });
+                    }, function(){
+                        nzSwal({
+                            title: "Email Failed",
+                            timer: 1500,
+                            confirmButtonColor: "#FFFFFF",
+                            confirmButtonText: ""
+                        });
                     });
             }
+            else {
+                nzSwal({
+                    title: "Are you a human? If so check the box."
+                });
+            }
+        }
+        function test(){
+            console.log("works");
         }
 
         function clearForm(email) {

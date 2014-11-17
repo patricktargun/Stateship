@@ -32,12 +32,13 @@
                     html: '<p>'+email.text+'</p>'+'<p>Sent from Stateship.org</p>'
                 }
             };
-            return $http.post("/api/sendemail", aEmail).then(function(stuff){
-                console.log(stuff.data);
-                return stuff.data;
+            var deferred = $q.defer();
+            $http.post("/api/sendemail", aEmail).then(function(stuff){
+                deferred.resolve(stuff.data);
             }, function(err){
-                return err;
+                deferred.reject(err);
             });
+            return deferred.promise;
         }
     }
     function setCurrentRep(rep){
