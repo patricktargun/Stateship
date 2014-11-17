@@ -5,7 +5,7 @@ var express = require('express'),
     MandrillCtrl = require('./lib/controllers/mandrillCtrl');
 
 var app = express(),
-    port = 9901;
+    port = process.env.PORT_NUMBER || 9901;
 
 var CORS = function(req, res, next){
     if(req.headers.origin === 'http://localhost:9901' || req.headers.origin === 'http://stateship.org'){

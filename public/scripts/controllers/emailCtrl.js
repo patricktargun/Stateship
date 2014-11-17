@@ -14,11 +14,9 @@
         function sendEmail(email) {
             $scope.$broadcast('show-errors-check-validity');
             if (!$scope.emailReps.$valid) {
-                console.log("everytime?");
-                return; 
+                return;
             }
             else if ($scope.emailReps.$valid) {
-                console.log("buttcakes");
                 if (vm.isHuman) {
                     console.log('got here');
                     email.to = currentRep.emails[0];
