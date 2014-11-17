@@ -80,7 +80,7 @@
 				return; 
 			}
 			else if ($scope.searchReps.$valid) {
-				$location.path("/state/"+vm.address.state.abbreviation+"/"+vm.address.street+','+vm.address.city);
+				$location.path("/state/"+vm.address.state.abbreviation.toLowerCase()+"/"+vm.address.street+','+vm.address.city);
 			}
 		}			
 
