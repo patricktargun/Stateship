@@ -3,19 +3,26 @@
         .module('stateship')
         .controller('EmailCtrl', EmailCtrl);
 
-    function EmailCtrl(currentRep, EmailService, nzSwal, $route, $location) {
+    function EmailCtrl(currentRep, EmailService, nzSwal, $route, $location, $scope) {
         var vm = this;
         vm.sendEmail = sendEmail;
         vm.resetForm = resetForm;
         vm.clearForm = clearForm;
         vm.rep = currentRep;
-        vm.test = test;
+
 
         function sendEmail(email) {
-            if (vm.isHuman) {
-                console.log('got here');
+            $scope.$broadcast('show-errors-check-validity');
+            if (!$scope.searchReps.$valid) {
+                return; 
+            }
+            else if ($scope.searchReps.$valid) {
                 email.to = currentRep.emails[0];
                 EmailService.sendEmail(email)
+                if (vm.isHuman) {
+                    console.log('got here');
+                    email.to = currentRep.emails[0];
+                    EmailService.sendEmail(email)
                     .then(function() {
                         for (var key in email)
                             email[key] = "";
@@ -33,15 +40,14 @@
                             confirmButtonText: ""
                         });
                     });
+                }
+                else {
+                    nzSwal({
+                        title: "Are you a human? If so check the box."
+                    });
+                }
             }
-            else {
-                nzSwal({
-                    title: "Are you a human? If so check the box."
-                });
-            }
-        }
-        function test(){
-            console.log("works");
+
         }
 
         function clearForm(email) {
