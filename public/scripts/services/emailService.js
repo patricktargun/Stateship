@@ -26,7 +26,7 @@
         function sendEmail(email){
             var aEmail = {
                 message: {
-                    to: [{email: 'danielckesler@gmail.com'}],
+                    to: [{email: email.to}],
                     from_email: email.from,
                     subject: email.subject,
                     html: '<p>'+email.text+'</p>'+'<p>Sent from Stateship.org</p>'
