@@ -14,7 +14,6 @@
 
 
 				link: function(scope, elem, attrs){
-					// console.log(scope, elem, attrs);
 					var spinner = angular.element('<div class="our-btn btn-blue"><i class="ion-loading-c"></i></div>').hide();
 					elem.after(spinner);
 
