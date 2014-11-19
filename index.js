@@ -8,7 +8,12 @@ var app = express(),
     port = process.env.PORT_NUMBER || 9901;
 
 var CORS = function(req, res, next){
-    if(req.headers.origin === 'http://localhost:9901' || req.headers.origin === 'http://stateship.org' || req.headers.origin === 'http://www.stateship.org' || req.headers.origin === "http://104.131.186.205"){
+    if(req.headers.origin === 'http://localhost:9901' || req.headers.origin === 'http://stateship.org' ||
+        req.headers.origin === 'http://www.stateship.org' || req.headers.origin === "http://104.131.186.205"){
+        next();
+    }
+    else if(req.headers.referer === 'http://localhost:9901/' || req.headers.referer === 'http://stateship.org/' ||
+        req.headers.referer === 'http://www.stateship.org/' || req.headers.referer === "http://104.131.186.205/"){
         next();
     }
     else {
