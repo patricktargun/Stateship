@@ -13,12 +13,12 @@ function browser(){
             M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
             if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
             return M.join(' ');
-        })().indexOf("Chrome") !== -1)
+        })().indexOf("IE") !== -1)
     {
         alert("This website is not made to work with Internet Explorer. Try downloading one of these" +
         "\n Chrome - https://www.google.com/chrome/browser/" +
         "\n Firefox - https://www.mozilla.org/en-US/firefox/new/" +
-        "\n Opera - http://www.opera.com/")
+        "\n Opera - http://www.opera.com/");
     }
 }
 browser();

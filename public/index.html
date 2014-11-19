@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" id="ng-app" ng-app="stateship">
+<html xmlns:ng="http://angularjs.org" lang="en" id="ng-app" ng-app="stateship">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,14 +15,20 @@
     <link rel="stylesheet" href="styles/sweet-alert.css">
     <link href="styles/main.css" rel="stylesheet">
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-56810137-1', 'auto');
-      ga('send', 'pageview');
-
+    ga('create', 'UA-56810137-1', 'auto');
+    ga('send', 'pageview');
     </script>
     <script src="scripts/ieAlert.js"></script>
 
@@ -35,28 +42,29 @@
         </a>
 
         <div class="header-righto">
-        <form name="searchReps" novalidate>
-            <div class="form-group search-part" show-errors>
+            <form name="searchReps" novalidate>
+                <div class="form-group search-part" show-errors>
                     <input type="text" ng-model="mainCtrl.address.street" name="address" class="form-control header-input" placeholder="Street Address" required>
                     <span class="help-block help-position" ng-if="searchReps.address.$error.required">Enter an Address</span>
-            </div>
-            <div class="form-group search-part" show-errors>
-                <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control header-input city-input" placeholder="City" required>
-                <span class="help-block help-position" ng-if="searchReps.city.$error.required">Enter a City</span>
-            </div>
-            <div class="form-group search-part" show-errors>
-                <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" name="state" placeholder="State" required></select>
-                <span class="help-block help-position" ng-if="searchReps.state.$error.required">Select State</span>
-            </div>
-            <div class="our-btn btn-blue" type="submit" ng-click="mainCtrl.submitAddress()" pending>Find Reps</div>
-        </form>
+                </div>
+                <div class="form-group search-part" show-errors>
+                    <input type="text" ng-model="mainCtrl.address.city" name="city" class="form-control header-input city-input" placeholder="City" required>
+                    <span class="help-block help-position" ng-if="searchReps.city.$error.required">Enter a City</span>
+                </div>
+                <div class="form-group search-part" show-errors>
+                    <select ng-model="mainCtrl.address.state" ng-options="state.abbreviation for state in mainCtrl.stateList" name="state" placeholder="State" required></select>
+                    <span class="help-block help-position" ng-if="searchReps.state.$error.required">Select State</span>
+                </div>
+                <div class="our-btn btn-blue" type="submit" ng-click="mainCtrl.submitAddress()" pending>Find Reps</div>
+            </form>
         </div>
     </header>
 
     <div ng-view></div>
 
     <footer>
-        <p>Stateship - Find Your Representatives - Made by <a href="//socketbot.com">Socket Bot</a></p>
+        <p>Stateship - Find Your Representatives - Made by <a href="//socketbot.com">Socket Bot</a>
+        </p>
     </footer>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
