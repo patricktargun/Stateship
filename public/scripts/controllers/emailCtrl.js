@@ -18,7 +18,6 @@
             }
             else if ($scope.emailReps.$valid) {
                 if (vm.isHuman) {
-                    console.log('got here');
                     email.to = currentRep.emails[0];
                     EmailService.sendEmail(email)
                     .then(function() {

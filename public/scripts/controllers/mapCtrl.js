@@ -14,7 +14,6 @@
         vm.hideState = false;
 
         function setCurrentState(state) {
-            console.log(state);
             if (state === "or"){
                 nzSwal({
                     title: "There is currently an issue with Oregon's state level information. Please enter an Oregon address in the search " +
