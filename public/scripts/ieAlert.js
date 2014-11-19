@@ -15,7 +15,7 @@ function browser(){
             return M.join(' ');
         })().indexOf("IE") !== -1)
     {
-        alert("This website is not optimized with Internet Explorer")
+        alert("This website is not made to work with Internet Explorer. Try")
     }
 }
 browser();
