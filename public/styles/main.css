@@ -143,7 +143,7 @@ header {
 
 .map-gone {
 	text-align: center;
-	margin-top: 75px;
+	margin-top: 25px;
 	display: none;
 }
 
@@ -401,7 +401,12 @@ footer p {
 }
 /* Landscape phones and portrait tablets */
 @media (max-width: 675px) {
-	.header-input {display: block; width: 90%; margin: 20px auto;}
+	.header-input {display: block; width: 90%; margin: 0px auto;}
+	.header-righto form {margin-top: 40px;}
+	.address-input {width: 205px;}
+	.main-title {line-height: 20px;}
+	.rep-wrapper {margin: 0;}
+	.state-container {padding: 10px;}
 }
 
 /* Phones and down */
