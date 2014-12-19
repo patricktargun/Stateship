@@ -16,67 +16,82 @@
                 address: address || state
             }).then(function(response) {
 
-            	//separates out information
-            	//national: US President, Vice President, Senators, US Rep
-            	//state: Governor, Attorney General, State Legislators, etc
-            	//local: County and City government
+                //separates out information
+                //national: US President, Vice President, Senators, US Rep
+                //state: Governor, Attorney General, State Legislators, etc
+                //local: County and City government
                 var arr = response.data;
                 national = ['', ''];
                 stateReps = [];
                 local = [];
                 for (var i = 0; i < arr.length; i++) {
-                    if (arr[i].office.levels &&
-                        arr[i].office.levels.indexOf('country') > -1) {
-                        switch (arr[i].office.name) {
-                            case 'President':
-                                national[0] = arr[i];
-                                break;
-                            case 'Vice President':
-                                national[1] = arr[i];
-                                break;
-                            default:
-                                national.push(arr[i]);
-                                break;
-                        }
-
-                    } else if (arr[i].office.divisionId.indexOf('county') > -1 ||
-                        arr[i].office.divisionId.indexOf('place') > -1) {
-                        local.push(arr[i]);
-
-
-                    } else {
-                        stateReps.push(arr[i]);
-                    }
-                    if(arr[i].channels){
-                        for(var j = 0; j < arr[i].channels.length; j++){
-                            if(arr[i].channels[j].type === "Facebook")
+                    if (arr[i].channels) {
+                        for (var j = 0; j < arr[i].channels.length; j++) {
+                            if (arr[i].channels[j].type === "Facebook")
                                 arr[i].facebook = arr[i].channels[j].id;
-                            else if(arr[i].channels[j].type === "Twitter")
+                            else if (arr[i].channels[j].type === "Twitter")
                                 arr[i].twitter = arr[i].channels[j].id;
                         }
                     }
 
+                    if (arr[i].office.name === 'President of the United States') {
+                        national[0] = arr[i];
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    } else if (arr[i].office.name === 'Vice-President of the United States') {
+                        national[1] = arr[i];
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    } else if (arr[i].office.name === 'United States Senate') {
+                        national.push(arr[i]);
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    } else if (arr[i].office.name.indexOf('United States House of Representatives') > -1) {
+                        national.push(arr[i]);
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    } else if (arr[i].office.divisionId.indexOf('county') > -1 ||
+                        arr[i].office.divisionId.indexOf('place') > -1) {
+                        local.push(arr[i]);
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    } else {
+                        stateReps.push(arr[i]);
+                        arr.splice(i, 1);
+                        i--;
+                        continue;
+                    }
+
+
                 }
-                fixPicture(local);
-                fixPicture(national);
-                fixPicture(stateReps);
+
+                if (local.length > 0) fixPicture(local);
+                if (national[0]) fixPicture(national);
+                if (stateReps.length > 0) fixPicture(stateReps);
                 return [national, stateReps, local];
             });
         }
 
         function getRepArrays() {
-        	//returns an array of arrays that contain the needed info.
+            //returns an array of arrays that contain the needed info.
             return [national, stateReps, local];
         }
-        function fixPicture(arr){
+
+        function fixPicture(arr) {
             var suffixes = ["Jr.", "Sr.", "II", "III", "IV", "V"];
-            for(var i = 0; i<arr.length; i++){
-                if(!arr[i].photoUrl){
+            for (var i = 0; i < arr.length; i++) {
+                if (!arr[i].photoUrl) {
+
                     var array = arr[i].name.split(" ");
-                    if(suffixes.indexOf(array[array.length-1]) !== -1){
+                    if (suffixes.indexOf(array[array.length - 1]) !== -1) {
                         array.pop();
                     }
-                    arr[i].initials = array[0][0]+array[array.length-1][0];
+                    arr[i].initials = array[0][0] + array[array.length - 1][0];
                 }
             }
         }
