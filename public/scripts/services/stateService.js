@@ -24,7 +24,6 @@
                 national = ['', ''];
                 stateReps = [];
                 local = [];
-                console.log(arr);
                 for (var i = 0; i < arr.length; i++) {
                     if (arr[i].channels) {
                         for (var j = 0; j < arr[i].channels.length; j++) {
