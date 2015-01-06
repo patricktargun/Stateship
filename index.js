@@ -7,7 +7,7 @@ var express = require('express'),
 var app = express(),
     port = process.env.PORT_NUMBER || 9901;
 
-var CORS = function(req, res, next){
+var CORS = function blocked req change (req, res, next){
     if(req.headers.origin === 'http://localhost:9901' || req.headers.origin === 'http://stateship.org' || req.headers.origin === 'http://www.stateship.org' || req.headers.origin === "http://104.131.186.205"){
         next();
     }
