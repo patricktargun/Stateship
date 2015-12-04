@@ -63,6 +63,7 @@ select:focus {
 	background-color: #2EA2DA;
 	color: #fff;
 	border: 1px solid #2EA2DA;
+	text-decoration: none;
 }
 
 .local-submit-btn {
@@ -186,6 +187,12 @@ header {
 .state-pic-wrapper {
 	text-align: center;
 	position: relative;
+}
+
+.state-wall-wrapper {
+	text-align: center;
+	position: relative;
+	padding-top: 20px;
 }
 
 .state-name {
@@ -346,7 +353,17 @@ header {
 	margin: 0px auto;
 }
 
+/*WALL*/
+.wall-container {
+	max-width: 750px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
 
+.wall-message {
+	white-space: pre-wrap;
+}
 
 /*FOOTER*/
 

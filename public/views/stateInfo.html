@@ -1,8 +1,13 @@
 <div class="state-container">
     <div class="row">
-        <div class="col-sm-3 state-pic-wrapper">
-            <p class="state-name">{{stateCtrl.stateName}}</p>
-            <img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
+        <div class="col-sm-3">
+            <div class="state-pic-wrapper">
+                <p class="state-name">{{stateCtrl.stateName}}</p>
+                <img ng-src="/img/states/{{stateCtrl.state}}.jpg" class='state'>
+            </div>
+            <div class="state-wall-wrapper">
+                <a href="#/state/{{stateCtrl.state}}/wall" class="our-btn btn-blue local-submit-btn" pending>Open State Wall</a>
+            </div>
         </div>
         <div class="col-sm-9">
             <div class="row">
