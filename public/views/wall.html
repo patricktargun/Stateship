@@ -1,0 +1,26 @@
+<div class="wall-container">
+    <h3 class="tier">{{::wallCtrl.stateName}} State Wall</h3>
+    <hr class="tier-hr">
+
+    <div ng-repeat="comment in wallCtrl.data.comments | orderBy: 'comment' track by comment._id">
+        <div class="col-xs-6 col-sm-4 col-md-2">{{::comment.date | date:'M/d/yy h:mm a'}}</div>
+        <div class="col-xs-6 col-sm-8 col-md-10 text-left wall-message">{{::comment.message}}</div>
+    </div>
+
+    <p class="msg-intro">Post your comment to the {{::wallCtrl.state}} Wall</p>
+
+    <form name="wallComment" novalidate>
+        <div class="form-group" show-errors>
+            <textarea type="text" ng-model="wallCtrl.data.message" class="form-control email-form" name="comment"
+                      rows="5"
+                      id="textArea" placeholder="Write your comment here" required></textarea>
+            <span class="help-block" ng-if="wallComment.comment.$error.required">Enter a comment</span>
+        </div>
+
+        <div class="form-group" id="submission-btns">
+            <div ng-click="wallCtrl.postComment()" type="submit" class="our-btn btn-blue">Send</div>
+            <div ng-click="wallCtrl.comment = ''" class="our-btn btn-clear">Clear</div>
+        </div>
+
+    </form>
+</div>
