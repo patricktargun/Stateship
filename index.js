@@ -4,16 +4,17 @@ var express = require('express'),
     civic = require('./lib/services/civicService'),
     wall = require('./lib/services/wallService'),
     MandrillCtrl = require('./lib/controllers/mandrillCtrl');
+    mongoose = require('mongoose');
 
 var app = express(),
-    port = process.env.PORT_NUMBER || 9901;
+    port = process.env.PORT_NUMBER || 8080;
 
 var CORS = function(req, res, next){
-    if(req.headers.origin === 'http://localhost:9901' || req.headers.origin === 'http://stateship.org' ||
+    if(req.headers.origin === 'http://localhost:8080' || req.headers.origin === 'http://stateship.org' ||
         req.headers.origin === 'http://www.stateship.org' || req.headers.origin === "http://104.131.186.205"){
         next();
     }
-    else if(req.headers.referer === 'http://localhost:9901/' || req.headers.referer === 'http://stateship.org/' ||
+    else if(req.headers.referer === 'http://localhost:8080/' || req.headers.referer === 'http://stateship.org/' ||
         req.headers.referer === 'http://www.stateship.org/' || req.headers.referer === "http://104.131.186.205/"){
         next();
     }
@@ -37,6 +38,27 @@ app.get('/api/wall/:state', CORS, wall.checkState, wall.readComments);
 app.post('/api/sendemail', CORS, MandrillCtrl.sendEmail);
 
 
-app.listen(port, function() {
-    console.log('Listening on port ' + port);
+// Connect to db and start app =============================
+
+mongoose.connection.on('open', function () {
+    console.log('Connected to mongo server.');
+
+    app.listen(port, function(){
+       console.log('The Magic Happens on port ' + port);
+    });
 });
+
+mongoose.connection.on('connecting', function () {
+    console.log('connecting...');
+});
+
+mongoose.connection.on('error', function (err) {
+    console.log('Could not connect to mongo server!');
+    console.log(err);
+    process.exit(1);
+});
+
+console.log('Mongo server at: Compose.io');
+mongoose.connect(process.env.COMPOSE_URI);
+
+
