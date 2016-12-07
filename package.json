@@ -18,11 +18,9 @@
   },
   "homepage": "https://github.com/Targun/StateShip",
   "dependencies": {
-    "body-parser": "^1.9.2",
-    "express": "^4.10.1",
-    "mandrill-api": "^1.0.41",
-    "mongoose": "^4.2.9",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "q": "^1.1.1",
-    "request": "^2.47.0"
+    "request": "^2.79.0"
   }
 }
