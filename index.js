@@ -39,26 +39,30 @@ app.post('/api/sendemail', CORS, MandrillCtrl.sendEmail);
 
 
 // Connect to db and start app =============================
-
-mongoose.connection.on('open', function () {
-    console.log('Connected to mongo server.');
-
-    app.listen(port, function(){
-       console.log('The Magic Happens on port ' + port);
-    });
+app.listen(port, function(){
+   console.log('The Magic Happens on port ' + port);
 });
 
-mongoose.connection.on('connecting', function () {
-    console.log('connecting...');
-});
 
-mongoose.connection.on('error', function (err) {
-    console.log('Could not connect to mongo server!');
-    console.log(err);
-    process.exit(1);
-});
+// mongoose.connection.on('open', function () {
+//     console.log('Connected to mongo server.');
 
-console.log('Mongo server at: Compose.io');
-mongoose.connect(process.env.COMPOSE_URI);
+//     app.listen(port, function(){
+//        console.log('The Magic Happens on port ' + port);
+//     });
+// });
+
+// mongoose.connection.on('connecting', function () {
+//     console.log('connecting...');
+// });
+
+// mongoose.connection.on('error', function (err) {
+//     console.log('Could not connect to mongo server!');
+//     console.log(err);
+//     process.exit(1);
+// });
+
+// console.log('Mongo server at: Compose.io');
+// mongoose.connect(process.env.COMPOSE_URI);
 
 
